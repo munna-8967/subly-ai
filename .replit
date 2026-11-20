@@ -1,0 +1,20 @@
+# Replit settings. NOT verified on a live Replit account by the author: if something differs in your
+# workspace, follow the README (Replit section) and adjust.
+modules = ["nodejs-22"]
+run = "npm run build && npm start"
+
+[nix]
+channel = "stable-24_05"
+packages = ["ffmpeg-full"]
+
+[env]
+HOST = "0.0.0.0"
+PORT = "3000"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[deployment]
+run = ["sh", "-c", "npm run build && npm start"]
+deploymentTarget = "gce"

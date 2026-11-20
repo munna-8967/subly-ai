@@ -1,0 +1,29 @@
+{
+  "name": "subly-ai",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Subly AI - accounts, credits, AI subtitle generation, editing and export",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "node --watch --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/src/index.ts",
+    "dev:client": "vite --config client/vite.config.ts",
+    "build": "vite build --config client/vite.config.ts",
+    "start": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/src/index.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/unit/*.test.js\" \"tests/api/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json",
+    "test:e2e": "node --disable-warning=ExperimentalWarning tests/e2e/e2e.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  }
+}
